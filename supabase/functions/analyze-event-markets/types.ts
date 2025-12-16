@@ -12,6 +12,8 @@ export interface AnalyzeMarketRequest {
   question: string;
   /** Prediction market type (e.g., "Kalshi", "Polymarket") */
   pmType?: string;
+  /** Grok model to use for analysis (default: grok-4-1-fast-reasoning) */
+  model?: string;
 }
 
 /**

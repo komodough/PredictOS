@@ -62,6 +62,7 @@ export async function POST(request: NextRequest) {
         url: body.url,
         question: body.question,
         pmType,
+        model: body.model,
       }),
     });
 

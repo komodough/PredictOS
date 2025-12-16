@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import TerminalInput from "./TerminalInput";
+import TerminalInput, { type GrokModel } from "./TerminalInput";
 import AnalysisOutput from "./AnalysisOutput";
 import type { MarketAnalysis, AnalyzeMarketResponse } from "@/types/api";
 
@@ -31,7 +31,7 @@ const Terminal = () => {
   const [error, setError] = useState<string | null>(null);
   const [shouldClearInput, setShouldClearInput] = useState(false);
 
-  const handleSubmit = async (url: string) => {
+  const handleSubmit = async (url: string, model: GrokModel) => {
     setIsLoading(true);
     setError(null);
     setShouldClearInput(false);
@@ -51,6 +51,7 @@ const Terminal = () => {
         body: JSON.stringify({
           url,
           question: "What is the best trading opportunity in this market? Analyze the probability and provide a recommendation.",
+          model,
         }),
       });
 

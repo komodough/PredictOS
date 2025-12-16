@@ -8,6 +8,8 @@ export interface AnalyzeMarketRequest {
   question: string;
   /** Prediction market type (e.g., "Kalshi", "Polymarket") - auto-detected if not provided */
   pmType?: string;
+  /** Grok model to use for analysis */
+  model?: string;
 }
 
 /**

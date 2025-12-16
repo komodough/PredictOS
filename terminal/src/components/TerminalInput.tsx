@@ -1,10 +1,23 @@
 "use client";
 
 import { useState, useEffect, FormEvent, useRef } from "react";
-import { Send, Link2 } from "lucide-react";
+import { Send, Link2, ChevronDown } from "lucide-react";
+
+export type GrokModel = 
+  | "grok-4-1-fast-reasoning"
+  | "grok-4-1-fast-non-reasoning"
+  | "grok-4-fast-reasoning"
+  | "grok-4-fast-non-reasoning";
+
+export const GROK_MODELS: { value: GrokModel; label: string }[] = [
+  { value: "grok-4-1-fast-reasoning", label: "Grok 4.1 Fast (Reasoning)" },
+  { value: "grok-4-1-fast-non-reasoning", label: "Grok 4.1 Fast (Non-Reasoning)" },
+  { value: "grok-4-fast-reasoning", label: "Grok 4 Fast (Reasoning)" },
+  { value: "grok-4-fast-non-reasoning", label: "Grok 4 Fast (Non-Reasoning)" },
+];
 
 interface TerminalInputProps {
-  onSubmit: (url: string) => void;
+  onSubmit: (url: string, model: GrokModel) => void;
   isLoading: boolean;
   shouldClear?: boolean;
 }
@@ -22,7 +35,22 @@ const TerminalInput = ({ onSubmit, isLoading, shouldClear }: TerminalInputProps)
   const [input, setInput] = useState("");
   const [dots, setDots] = useState("");
   const [messageIndex, setMessageIndex] = useState(0);
+  const [selectedModel, setSelectedModel] = useState<GrokModel>("grok-4-1-fast-reasoning");
+  const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
   const prevShouldClear = useRef(shouldClear);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsModelDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Clear input when shouldClear changes to true
   useEffect(() => {
@@ -64,17 +92,62 @@ const TerminalInput = ({ onSubmit, isLoading, shouldClear }: TerminalInputProps)
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (input.trim() && !isLoading) {
-      onSubmit(input.trim());
+      onSubmit(input.trim(), selectedModel);
     }
   };
 
+  const getModelLabel = (model: GrokModel) => {
+    return GROK_MODELS.find(m => m.value === model)?.label || model;
+  };
+
   return (
-    <div className="border border-border rounded-lg bg-card/80 backdrop-blur-sm border-glow">
-      <div className="flex items-center gap-2 px-4 py-2 border-b border-border/50">
-        <Link2 className="w-4 h-4 text-primary" />
-        <span className="text-xs text-muted-foreground font-display">
-          MARKET ANALYSIS INPUT
-        </span>
+    <div className="relative z-20 border border-border rounded-lg bg-card/80 backdrop-blur-sm border-glow">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-border/50">
+        <div className="flex items-center gap-2">
+          <Link2 className="w-4 h-4 text-primary" />
+          <span className="text-xs text-muted-foreground font-display">
+            MARKET ANALYSIS INPUT
+          </span>
+        </div>
+        
+        {/* Model Dropdown in Header */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            type="button"
+            onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
+            disabled={isLoading}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/50 border border-border text-[10px] text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-mono whitespace-nowrap"
+          >
+            <span className="hidden sm:inline">{getModelLabel(selectedModel)}</span>
+            <span className="sm:hidden">Model</span>
+            <ChevronDown className={`w-3 h-3 transition-transform ${isModelDropdownOpen ? 'rotate-180' : ''}`} />
+          </button>
+          
+          {isModelDropdownOpen && (
+            <div className="absolute right-0 top-full mt-1 w-64 bg-card border border-border rounded-lg shadow-xl z-[100] overflow-hidden">
+              <div className="py-1">
+                {GROK_MODELS.map((model) => (
+                  <button
+                    key={model.value}
+                    type="button"
+                    onClick={() => {
+                      setSelectedModel(model.value);
+                      setIsModelDropdownOpen(false);
+                    }}
+                    className={`w-full px-4 py-2.5 text-left text-sm font-mono transition-colors ${
+                      selectedModel === model.value
+                        ? 'bg-primary/20 text-primary'
+                        : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                    }`}
+                  >
+                    <span className="block">{model.label}</span>
+                    <span className="block text-[10px] opacity-60 mt-0.5">{model.value}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
       
       <form onSubmit={handleSubmit} className="flex items-center gap-3 p-4">

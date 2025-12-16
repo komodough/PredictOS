@@ -74,7 +74,10 @@ Deno.serve(async (req: Request) => {
     }
 
     // Extract parameters
-    const { url, question, pmType } = requestBody;
+    const { url, question, pmType, model } = requestBody;
+    
+    // Use provided model or default to grok-4-1-fast-reasoning
+    const grokModel = model || "grok-4-1-fast-reasoning";
 
     // Validate required parameters
     if (!url) {
@@ -221,12 +224,12 @@ Deno.serve(async (req: Request) => {
     // Build prompt and call Grok
     const { systemPrompt, userPrompt } = analyzeEventMarketsPrompt(markets, eventIdentifier, question, pmType);
 
-    console.log("Calling Grok AI...");
+    console.log("Calling Grok AI with model:", grokModel);
     const grokResponse = await callGrokResponses(
       userPrompt,
       systemPrompt,
       "json_object",
-      "grok-4-1-fast-reasoning",
+      grokModel,
       3
     );
     console.log("Grok response received, tokens:", grokResponse.usage?.total_tokens);
