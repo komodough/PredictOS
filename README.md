@@ -4,9 +4,7 @@
 
 <h1 align="center">PredictOS</h1>
 
-<p align="center"><strong>The All-In-One Prediction Market Framework</strong></p>
-
-<p align="center">Build, analyze, and trade on prediction markets with AI-powered insights, automated strategies, and unified market access.</p>
+<p align="center"><strong>The leading all-in-one open-source framework for deploying custom AI agents and tading bots purpose-built for prediction markets - bring your own data, models, and strategies to dominate prediction forecasting</strong></p>
 
 <p align="center"><em>Built by <a href="https://predictionxbt.fun">PredictionXBT</a>, the team behind <strong>Predict</strong> — The Layer 1 for Social Prediction Market</em></p>
 
