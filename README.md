@@ -10,7 +10,7 @@
 
 <div align="center">
 
-  <a href="https://github.com/PredictionXBT/PredictOS/blob/main/LICENSE"><img src="https://img.shields.io/github/license/PredictionXBT/PredictOS?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/PredictionXBT/PredictOS/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
   <a href="https://github.com/PredictionXBT/PredictOS"><img src="https://img.shields.io/badge/version-0.1.0-blue?style=for-the-badge" alt="Version"></a>
   <a href="https://predictionxbt.fun"><img src="https://img.shields.io/badge/Website-predictionxbt.fun-purple?style=for-the-badge" alt="Website"></a>
   <a href="https://x.com/prediction_xbt"><img src="https://img.shields.io/badge/Twitter-@prediction__xbt-black?style=for-the-badge&logo=x" alt="Twitter"></a>
