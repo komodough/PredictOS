@@ -432,7 +432,7 @@ const BettingBotTerminal = () => {
                       max="1000"
                       className="bg-transparent border-none outline-none font-mono w-20 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
-                    <span className="text-muted-foreground text-xs">USD total</span>
+                    <span className="text-muted-foreground text-xs">USD per side</span>
                   </div>
                 </div>
               </div>

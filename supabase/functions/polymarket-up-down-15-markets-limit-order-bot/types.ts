@@ -12,7 +12,7 @@ export interface LimitOrderBotRequest {
   asset: SupportedAsset;
   /** Order price as percentage (e.g., 48 for 48%). Defaults to 48% */
   price?: number;
-  /** Order size in USD total (split between both sides). Defaults to $25 */
+  /** Order size in USD total per side. Defaults to $25 */
   sizeUsd?: number;
 }
 

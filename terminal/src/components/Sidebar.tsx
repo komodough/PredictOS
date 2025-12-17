@@ -25,8 +25,8 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { id: "analysis", label: "Market Analysis", icon: BarChart3, available: true, href: "/market-analysis", version: "v0.1" },
-  { id: "betting-bots", label: "Betting Bots", icon: Bot, available: true, href: "/betting-bots", version: "v0.1" },
+  { id: "analysis", label: "Market Analysis", icon: BarChart3, available: true, href: "/market-analysis" },
+  { id: "betting-bots", label: "Betting Bots", icon: Bot, available: true, href: "/betting-bots" },
   { id: "agent-battles", label: "Agent Battles (x402)", icon: Swords, available: false },
   { id: "no-code-builder", label: "No Code Builder", icon: Wand2, available: false },
   { id: "whale-tracking", label: "Whale Tracking", icon: Fish, available: false },
@@ -178,7 +178,7 @@ export function Sidebar({ activeTab }: SidebarProps) {
           
           {/* Version Tag */}
           <span className="text-[10px] px-2 py-0.5 rounded bg-success/20 text-success border border-success font-mono font-bold">
-            v0.1
+            v1.0.1
           </span>
         </div>
       </div>
