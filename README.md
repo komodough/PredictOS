@@ -244,7 +244,7 @@ Your PredictOS terminal will be running at [http://localhost:3000](http://localh
       <h3><a href="https://domeapi.io/">Dome API</a></h3>
       <p><strong>The unified API for prediction markets.</strong> Dome provides seamless access to Kalshi, Polymarket, and other prediction market platforms through a single, elegant interface.</p>
       <p>🔗 PredictOS is proudly powered by Dome — they handle the complexity of multi-platform data aggregation so we can focus on building the best trading tools.</p>
-      <p><a href="https://domeapi.io/">🌐 Website</a> · <a href="https://x.com/getdomeapi">𝕏 Twitter</a></p>
+      <p><a href="https://domeapi.io/">🌐 Website</a> · <a href="https://dashboard.domeapi.io/">📊 Dashboard</a> · <a href="https://x.com/getdomeapi">𝕏 Twitter</a></p>
     </td>
   </tr>
   <tr>
