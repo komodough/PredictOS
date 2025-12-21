@@ -271,7 +271,7 @@ Your PredictOS terminal will be running at [http://localhost:3000](http://localh
   <tr>
     <td width="120" align="center">
       <a href="https://www.polyfactual.com/">
-        <img src="terminal/public/polyfactual_logo.jpg" alt="Polyfactual" width="80" height="80" />
+        <img src="terminal/public/polyfacts.svg" alt="Polyfactual" width="80" height="80" />
       </a>
     </td>
     <td>
