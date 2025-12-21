@@ -75,6 +75,7 @@ A key feature driving adoption is the ability to **stake $PREDICT for attractive
 |---------|--------|-------------|-------------|
 | **AI Market Analysis** | ✅ Released | Paste a Kalshi or Polymarket URL and get instant AI-powered analysis with probability estimates, confidence scores, and trading recommendations | [📖 Setup Guide](docs/features/market-analysis.md) |
 | **Betting Bots** | ✅ Released | Polymarket 15 Minute Up/Down Arbitrage Bot (more bots coming) | [📖 Setup Guide](docs/features/betting-bots.md) |
+| **Wallet Tracking** | ✅ Released | Real-time order tracking for any Polymarket wallets using Dome SDK WebSockets — 10 seconds faster than hosted bots | [📖 Setup Guide](docs/features/wallet-tracking.md) |
 
 ## 🔮 Coming Soon
 
@@ -82,7 +83,7 @@ A key feature driving adoption is the ability to **stake $PREDICT for attractive
 |---------|-------------|
 | **Agent Battles (x402)** | Pit AI agents against each other to discover winning strategies |
 | **No Code Builder** | Build trading strategies without writing code |
-| **Whale Tracking** | Monitor and follow large traders across markets |
+| **Whale Tracking** | Automated alerts and analysis for large traders across markets |
 | **Copytrading** | Automatically copy top-performing traders |
 | **Arbitrage Opportunity** | Detect and exploit cross-platform price differences |
 | **Perps Trading / Leverage** | Leveraged prediction market positions |
@@ -142,6 +143,7 @@ Edit `.env.local` with the credentials required for the features you want to use
 > 📖 **Feature-specific setup guides:**
 > - **Market Analysis:** [docs/features/market-analysis.md](docs/features/market-analysis.md) — requires `DOME_API_KEY` + AI provider key (`XAI_API_KEY` or `OPENAI_API_KEY`)
 > - **Betting Bots:** [docs/features/betting-bots.md](docs/features/betting-bots.md) — requires `POLYMARKET_WALLET_PRIVATE_KEY` + `POLYMARKET_PROXY_WALLET_ADDRESS`
+> - **Wallet Tracking:** [docs/features/wallet-tracking.md](docs/features/wallet-tracking.md) — requires `DOME_API_KEY` (frontend only, no Supabase needed)
 
 Example for Market Analysis:
 

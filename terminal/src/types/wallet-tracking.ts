@@ -50,11 +50,3 @@ export interface SSEMessage {
   timestamp: string;
 }
 
-/**
- * Request body for wallet tracking API
- */
-export interface WalletTrackingRequest {
-  action: "subscribe" | "unsubscribe";
-  walletAddress: string;
-}
-
