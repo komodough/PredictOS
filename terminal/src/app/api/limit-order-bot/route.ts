@@ -135,6 +135,7 @@ export async function POST(request: NextRequest) {
         asset: body.asset.toUpperCase(),
         price: body.price,
         sizeUsd: body.sizeUsd,
+        ladder: body.ladder,
       }
     );
 
