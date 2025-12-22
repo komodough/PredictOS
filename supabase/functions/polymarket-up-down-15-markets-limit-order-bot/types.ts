@@ -19,20 +19,6 @@ export interface LadderConfig {
 }
 
 /**
- * Individual ladder rung (price level with allocation)
- */
-export interface LadderRung {
-  /** Price as percentage (e.g., 49) */
-  pricePercent: number;
-  /** Price as decimal (e.g., 0.49) */
-  priceDecimal: number;
-  /** USD allocation for this rung */
-  sizeUsd: number;
-  /** Percentage of total bankroll */
-  allocationPercent: number;
-}
-
-/**
  * Request body for the limit order bot
  */
 export interface LimitOrderBotRequest {
@@ -113,10 +99,6 @@ export interface LimitOrderBotResponse {
     sizeUsd: number;
     /** Whether ladder mode was used */
     ladderMode: boolean;
-    /** Ladder configuration used (if ladder mode) */
-    ladderConfig?: LadderConfig;
-    /** Ladder rungs with allocations (if ladder mode) */
-    ladderRungs?: LadderRung[];
     /** Result for the market */
     market: MarketOrderResult;
   };

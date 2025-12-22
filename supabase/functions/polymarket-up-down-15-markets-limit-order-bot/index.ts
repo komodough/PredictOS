@@ -17,7 +17,6 @@ import type {
   LimitOrderBotResponse,
   MarketOrderResult,
   LadderConfig,
-  LadderRung,
   LadderRungResult,
 } from "./types.ts";
 
@@ -267,18 +266,6 @@ Deno.serve(async (req: Request) => {
       };
     }
 
-    // Build ladder rungs for response if in ladder mode
-    let ladderRungs: LadderRung[] | undefined;
-    if (ladderMode) {
-      ladderRungs = client.calculateLadderRungs(
-        orderSizeUsd,
-        ladderConfig.maxPrice!,
-        ladderConfig.minPrice!,
-        ladderConfig.taperFactor!
-      );
-      client.clearLogs(); // Clear the calculation logs (we already have them)
-    }
-
     const response: LimitOrderBotResponse = {
       success: !marketResult.error,
       data: {
@@ -286,8 +273,6 @@ Deno.serve(async (req: Request) => {
         pricePercent: orderPrice * 100,
         sizeUsd: orderSizeUsd,
         ladderMode,
-        ladderConfig: ladderMode ? ladderConfig : undefined,
-        ladderRungs: ladderMode ? ladderRungs : undefined,
         market: marketResult,
       },
       logs,
