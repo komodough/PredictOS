@@ -26,6 +26,8 @@ export interface GetEventsResponse {
   success: boolean;
   /** Event identifier (ticker for Kalshi, slug for Polymarket) */
   eventIdentifier?: string;
+  /** Event ID (for Polymarket - used for OkBet links) */
+  eventId?: string;
   /** Prediction market type */
   pmType?: PmType;
   /** Raw market data from the provider */

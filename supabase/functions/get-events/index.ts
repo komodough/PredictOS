@@ -28,6 +28,46 @@ function extractPolymarketEventSlug(url: string): string | null {
 }
 
 /**
+ * Fetches Polymarket event details from Gamma API to get the event ID
+ * Tries multiple API endpoints to maximize compatibility
+ */
+async function getPolymarketEventId(slug: string): Promise<string | null> {
+  // Try the query parameter endpoint first
+  const endpoints = [
+    `https://gamma-api.polymarket.com/events?slug=${encodeURIComponent(slug)}`,
+    `https://gamma-api.polymarket.com/events/${encodeURIComponent(slug)}`,
+  ];
+
+  for (const endpoint of endpoints) {
+    try {
+      console.log(`Trying to fetch Polymarket event ID from: ${endpoint}`);
+      const response = await fetch(endpoint);
+      
+      if (!response.ok) {
+        console.warn(`Endpoint ${endpoint} returned ${response.status}`);
+        continue;
+      }
+      
+      const data = await response.json();
+      
+      // Handle both array response and single object response
+      const event = Array.isArray(data) ? data[0] : data;
+      
+      if (event && event.id !== undefined && event.id !== null) {
+        const eventId = String(event.id);
+        console.log(`Found Polymarket event ID: ${eventId} for slug: ${slug}`);
+        return eventId;
+      }
+    } catch (error) {
+      console.warn(`Error fetching from ${endpoint}:`, error);
+    }
+  }
+  
+  console.warn(`Could not fetch Polymarket event ID for slug ${slug} from any endpoint`);
+  return null;
+}
+
+/**
  * Detect prediction market type from URL
  */
 function detectPmType(url: string): PmType | null {
@@ -96,6 +136,7 @@ Deno.serve(async (req: Request) => {
     }
 
     let eventIdentifier: string;
+    let eventId: string | undefined;
     let markets: unknown[];
 
     if (pmType === "Kalshi") {
@@ -155,9 +196,14 @@ Deno.serve(async (req: Request) => {
       console.log("Fetching Polymarket markets via Dome:", { eventSlug });
 
       try {
-        const response = await getPolymarketMarkets({ slug: eventSlug });
-        markets = response.markets;
-        console.log(`Found ${markets.length} markets for Polymarket event`);
+        // Fetch markets and event ID in parallel
+        const [marketsResponse, fetchedEventId] = await Promise.all([
+          getPolymarketMarkets({ slug: eventSlug }),
+          getPolymarketEventId(eventSlug),
+        ]);
+        markets = marketsResponse.markets;
+        eventId = fetchedEventId || undefined;
+        console.log(`Found ${markets.length} markets for Polymarket event, eventId: ${eventId}`);
       } catch (error) {
         console.error("Failed to fetch Polymarket markets:", error);
         const errorMessage = error instanceof Error ? error.message : "Unknown error";
@@ -201,6 +247,7 @@ Deno.serve(async (req: Request) => {
     const response: GetEventsResponse = {
       success: true,
       eventIdentifier,
+      eventId,
       pmType,
       markets,
       marketsCount: markets.length,
