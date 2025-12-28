@@ -732,7 +732,7 @@ const AgenticMarketAnalysis = () => {
 
   return (
     <div className="min-h-[calc(100vh-80px)] px-2 py-4 md:px-4 md:py-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="space-y-6">
           {/* Header */}
           <div className="text-center py-8 fade-in">
@@ -1056,15 +1056,41 @@ const AgenticMarketAnalysis = () => {
                         </div>
                       )}
                       
+                      {/* Label Header */}
+                      <div className="flex items-center justify-between px-4 py-2 border-b border-border/50">
+                        <div className="flex items-center gap-2">
+                          <Bot className={`w-4 h-4 ${isCurrentlyRunning ? 'text-primary' : isCompleted ? 'text-success' : 'text-primary/70'}`} />
+                          <span className={`text-xs font-display uppercase tracking-wide ${
+                            isCurrentlyRunning ? 'text-primary' : isCompleted ? 'text-success' : 'text-muted-foreground'
+                          }`}>
+                            Predict Agent {index + 1}
+                          </span>
+                        </div>
+                        {agents.length > 1 && (
+                          <button
+                            onClick={() => removeAgent(agent.id)}
+                            disabled={isRunning}
+                            className="p-1 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            <Trash2 className="w-3 h-3" />
+                          </button>
+                        )}
+                      </div>
+                      
                       <div className="flex items-center justify-between px-4 py-3">
                         <div className="flex items-center gap-3">
                           {renderAgentStatus(agent.status)}
                           <span className={`font-display text-sm transition-colors ${
                             isCurrentlyRunning ? 'text-primary' : 'text-foreground'
                           }`}>
-                            Predict Agent {index + 1}
                             {isCurrentlyRunning && (
-                              <span className="text-primary/70 text-xs ml-2 typing-dots">analyzing</span>
+                              <span className="text-primary/70 text-xs typing-dots">analyzing</span>
+                            )}
+                            {isCompleted && (
+                              <span className="text-success/70 text-xs">complete</span>
+                            )}
+                            {agent.status === 'idle' && (
+                              <span className="text-muted-foreground text-xs">ready</span>
                             )}
                           </span>
                           {agent.status === 'error' && agent.error && (
@@ -1100,15 +1126,6 @@ const AgenticMarketAnalysis = () => {
                             agentZIndex + 50,
                             // Only restrict to Grok when Grok-only tools are selected
                             agent.tools?.some(t => t === 'x_search' || t === 'web_search') ?? false
-                          )}
-                          {agents.length > 1 && (
-                            <button
-                              onClick={() => removeAgent(agent.id)}
-                              disabled={isRunning}
-                              className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                              <Trash2 className="w-3.5 h-3.5" />
-                            </button>
                           )}
                         </div>
                       </div>

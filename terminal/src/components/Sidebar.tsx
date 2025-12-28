@@ -26,7 +26,7 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { id: "analysis", label: "Market Analysis", icon: BarChart3, available: true, href: "/market-analysis" },
+  { id: "analysis", label: "Predict Super Intelligence", icon: BarChart3, available: true, href: "/market-analysis" },
   { id: "betting-bots", label: "Betting Bots", icon: Bot, available: true, href: "/betting-bots" },
   { id: "wallet-tracking", label: "Wallet Tracking", icon: Eye, available: true, href: "/wallet-tracking" },
   { id: "agent-battles", label: "Agent Battles (x402)", icon: Swords, available: false },
