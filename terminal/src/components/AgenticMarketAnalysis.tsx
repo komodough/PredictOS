@@ -891,20 +891,49 @@ const AgenticMarketAnalysis = () => {
           {/* Header */}
           <div className="text-center py-8 fade-in">
             <h2 className="font-display text-xl md:text-2xl font-bold text-primary text-glow mb-4">
-              Agentic Market Analysis
+              Super Prediction Intelligence
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-6">
-              Deploy multiple AI agents to analyze prediction markets. Each agent provides independent analysis, then a judge agent synthesizes all perspectives.
+              Deploy AI agents with custom tools, models, and commands
             </p>
-            <a 
-              href="https://domeapi.io/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 border border-border/50 text-xs text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
-            >
-              <span className="text-cyan-400 font-bold">◉</span>
-              <span>Powered by Dome</span>
-            </a>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">
+                Powered by
+              </span>
+              <a 
+                href="https://pond.dflow.net/introduction" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all group"
+              >
+                <Image 
+                  src="/Dflow_logo.png" 
+                  alt="DFlow" 
+                  width={16} 
+                  height={16} 
+                  className="rounded-sm"
+                />
+                <span className="text-[11px] font-semibold text-indigo-400 group-hover:text-indigo-300">
+                  DFlow
+                </span>
+              </a>
+              <a 
+                href="https://domeapi.io/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all group"
+              >
+                <Image 
+                  src="/dome-icon-light.svg" 
+                  alt="Dome" 
+                  width={16} 
+                  height={16}
+                />
+                <span className="text-[11px] font-semibold text-emerald-400 group-hover:text-emerald-300">
+                  Dome
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Error Display */}
@@ -939,10 +968,46 @@ const AgenticMarketAnalysis = () => {
             
             {/* Data Provider Display */}
             {detectedUrlType !== 'none' && (
-              <div className="absolute bottom-3 right-4 flex items-center gap-1">
-                <span className="px-2 py-0.5 text-[10px] font-mono bg-cyan-500/20 text-cyan-400 rounded-md border border-cyan-500/30">
-                  Dome
+              <div className="absolute bottom-3 right-4 flex items-center gap-2">
+                <span className="text-[9px] font-mono text-muted-foreground/50 uppercase">
+                  via
                 </span>
+                {detectedUrlType === 'kalshi' ? (
+                  <a
+                    href="https://pond.dflow.net/introduction"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-indigo-500/20 border border-indigo-500/30 hover:bg-indigo-500/30 hover:border-indigo-500/50 transition-all"
+                  >
+                    <Image 
+                      src="/Dflow_logo.png" 
+                      alt="DFlow" 
+                      width={12} 
+                      height={12} 
+                      className="rounded-sm"
+                    />
+                    <span className="text-[10px] font-semibold text-indigo-400">
+                      DFlow
+                    </span>
+                  </a>
+                ) : (
+                  <a
+                    href="https://domeapi.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/30 hover:bg-emerald-500/30 hover:border-emerald-500/50 transition-all"
+                  >
+                    <Image 
+                      src="/dome-icon-light.svg" 
+                      alt="Dome" 
+                      width={12} 
+                      height={12}
+                    />
+                    <span className="text-[10px] font-semibold text-emerald-400">
+                      Dome
+                    </span>
+                  </a>
+                )}
               </div>
             )}
             

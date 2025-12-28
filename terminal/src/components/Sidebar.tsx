@@ -134,6 +134,87 @@ export function Sidebar({ activeTab }: SidebarProps) {
         })}
       </nav>
 
+      {/* Powered By Section */}
+      <div className="px-3 py-2 border-t border-border/50">
+        {!collapsed ? (
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">
+              Powered by
+            </span>
+            <div className="flex items-center gap-3">
+              {/* DFlow */}
+              <a
+                href="https://pond.dflow.net/introduction"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all group"
+              >
+                <Image 
+                  src="/Dflow_logo.png" 
+                  alt="DFlow" 
+                  width={16} 
+                  height={16} 
+                  className="rounded-sm"
+                />
+                <span className="text-[10px] font-semibold text-indigo-400 group-hover:text-indigo-300">
+                  DFlow
+                </span>
+              </a>
+              
+              {/* Dome */}
+              <a
+                href="https://domeapi.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all group"
+              >
+                <Image 
+                  src="/dome-icon-light.svg" 
+                  alt="Dome" 
+                  width={16} 
+                  height={16}
+                />
+                <span className="text-[10px] font-semibold text-emerald-400 group-hover:text-emerald-300">
+                  Dome
+                </span>
+              </a>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center gap-2">
+            <a
+              href="https://pond.dflow.net/introduction"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-md bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-all flex items-center justify-center"
+              title="DFlow"
+            >
+              <Image 
+                src="/Dflow_logo.png" 
+                alt="DFlow" 
+                width={18} 
+                height={18} 
+                className="rounded-sm"
+              />
+            </a>
+            <a
+              href="https://domeapi.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-md bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all flex items-center justify-center"
+              title="Dome"
+            >
+              <Image 
+                src="/dome-icon-light.svg" 
+                alt="Dome" 
+                width={18} 
+                height={18}
+              />
+            </a>
+          </div>
+        )}
+      </div>
+
       {/* Social Links & Version */}
       <div className="p-3 border-t border-border/50">
         <div className={cn("flex items-center", collapsed ? "flex-col gap-2" : "flex-row justify-between")}>
@@ -175,7 +256,7 @@ export function Sidebar({ activeTab }: SidebarProps) {
           
           {/* Version Tag */}
           <span className="text-[10px] px-2 py-0.5 rounded bg-success/20 text-success border border-success font-mono font-bold">
-            v1.4.1
+            v2.0.0
           </span>
         </div>
       </div>
