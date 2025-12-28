@@ -18,7 +18,9 @@ import {
   ArrowLeftRight,
   Coins,
   TrendingUp,
-  Eye
+  Eye,
+  ShieldCheck,
+  Plug
 } from "lucide-react";
 
 interface SidebarProps {
@@ -29,7 +31,8 @@ const navItems = [
   { id: "analysis", label: "Predict Super Intelligence", icon: BarChart3, available: true, href: "/market-analysis" },
   { id: "betting-bots", label: "Betting Bots", icon: Bot, available: true, href: "/betting-bots" },
   { id: "wallet-tracking", label: "Wallet Tracking", icon: Eye, available: true, href: "/wallet-tracking" },
-  { id: "agent-battles", label: "Agent Battles (x402)", icon: Swords, available: false },
+  { id: "agent-verifiability", label: "Agent Verifiability", icon: ShieldCheck, available: false },
+  { id: "x402-integration", label: "x402 Integration", icon: Plug, available: false },
   { id: "no-code-builder", label: "No Code Builder", icon: Wand2, available: false },
   { id: "whale-tracking", label: "Whale Tracking", icon: Fish, available: false },
   { id: "copytrading", label: "Copytrading", icon: Copy, available: false },
