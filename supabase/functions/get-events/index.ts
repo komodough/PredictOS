@@ -2,12 +2,11 @@
  * Supabase Edge Function: get-events
  * 
  * Extracts event data from prediction market URLs.
- * Supports Kalshi and Polymarket via Dome and DFlow APIs.
+ * Supports Kalshi (via Dome/DFlow) and Polymarket (via Gamma API).
  */
 
 import { 
   getKalshiMarketsByEvent as getDomeKalshiMarketsByEvent,
-  getPolymarketMarkets,
 } from "../_shared/dome/endpoints.ts";
 import {
   getKalshiMarketsByEvent as getDFlowKalshiMarketsByEvent,
@@ -28,11 +27,42 @@ function extractPolymarketEventSlug(url: string): string | null {
 }
 
 /**
- * Fetches Polymarket event details from Gamma API to get the event ID
- * Tries multiple API endpoints to maximize compatibility
+ * Polymarket event and markets response from Gamma API
  */
-async function getPolymarketEventId(slug: string): Promise<string | null> {
-  // Try the query parameter endpoint first
+interface PolymarketGammaEvent {
+  id: number | string;
+  slug: string;
+  title: string;
+  description?: string;
+  markets: PolymarketGammaMarket[];
+  [key: string]: unknown;
+}
+
+interface PolymarketGammaMarket {
+  id: string;
+  question: string;
+  conditionId: string;
+  slug: string;
+  outcomes: string[];
+  outcomePrices: string[];
+  clobTokenIds: string[];
+  volume: string;
+  liquidity: string;
+  active: boolean;
+  closed: boolean;
+  acceptingOrders: boolean;
+  [key: string]: unknown;
+}
+
+/**
+ * Fetches Polymarket event and markets from Gamma API
+ * Returns both the event ID and the markets array in a single call
+ */
+async function getPolymarketEventAndMarkets(slug: string): Promise<{
+  eventId: string | null;
+  markets: PolymarketGammaMarket[];
+}> {
+  // Try the query parameter endpoint first, then the path-based endpoint
   const endpoints = [
     `https://gamma-api.polymarket.com/events?slug=${encodeURIComponent(slug)}`,
     `https://gamma-api.polymarket.com/events/${encodeURIComponent(slug)}`,
@@ -40,31 +70,34 @@ async function getPolymarketEventId(slug: string): Promise<string | null> {
 
   for (const endpoint of endpoints) {
     try {
-      console.log(`Trying to fetch Polymarket event ID from: ${endpoint}`);
+      console.log(`Fetching Polymarket event from Gamma API: ${endpoint}`);
       const response = await fetch(endpoint);
       
       if (!response.ok) {
-        console.warn(`Endpoint ${endpoint} returned ${response.status}`);
+        console.warn(`Gamma API endpoint ${endpoint} returned ${response.status}`);
         continue;
       }
       
       const data = await response.json();
       
       // Handle both array response and single object response
-      const event = Array.isArray(data) ? data[0] : data;
+      const event: PolymarketGammaEvent | undefined = Array.isArray(data) ? data[0] : data;
       
-      if (event && event.id !== undefined && event.id !== null) {
-        const eventId = String(event.id);
-        console.log(`Found Polymarket event ID: ${eventId} for slug: ${slug}`);
-        return eventId;
+      if (event && event.markets && Array.isArray(event.markets)) {
+        const eventId = event.id !== undefined && event.id !== null ? String(event.id) : null;
+        console.log(`Found Polymarket event via Gamma API: eventId=${eventId}, markets=${event.markets.length}`);
+        return {
+          eventId,
+          markets: event.markets,
+        };
       }
     } catch (error) {
-      console.warn(`Error fetching from ${endpoint}:`, error);
+      console.warn(`Error fetching from Gamma API ${endpoint}:`, error);
     }
   }
   
-  console.warn(`Could not fetch Polymarket event ID for slug ${slug} from any endpoint`);
-  return null;
+  console.warn(`Could not fetch Polymarket event for slug ${slug} from Gamma API`);
+  return { eventId: null, markets: [] };
 }
 
 /**
@@ -182,7 +215,7 @@ Deno.serve(async (req: Request) => {
         );
       }
     } else {
-      // Polymarket via Dome API
+      // Polymarket via Gamma API (Polymarket's native API)
       const eventSlug = extractPolymarketEventSlug(url);
 
       if (!eventSlug) {
@@ -193,20 +226,16 @@ Deno.serve(async (req: Request) => {
       }
 
       eventIdentifier = eventSlug;
-      console.log("Fetching Polymarket markets via Dome:", { eventSlug });
+      console.log("Fetching Polymarket event and markets via Gamma API:", { eventSlug });
 
       try {
-        // Fetch markets and event ID in parallel
-        const [marketsResponse, fetchedEventId] = await Promise.all([
-          getPolymarketMarkets({ slug: eventSlug }),
-          getPolymarketEventId(eventSlug),
-        ]);
-        markets = marketsResponse.markets;
+        // Fetch event and markets from Gamma API in a single call
+        const { eventId: fetchedEventId, markets: fetchedMarkets } = await getPolymarketEventAndMarkets(eventSlug);
+        markets = fetchedMarkets;
         eventId = fetchedEventId || undefined;
-        console.log(`Found ${markets.length} markets for Polymarket event, eventId: ${eventId}`);
-        console.log("Markets:", markets);
+        console.log(`Found ${markets.length} markets for Polymarket event via Gamma API, eventId: ${eventId}`);
       } catch (error) {
-        console.error("Failed to fetch Polymarket markets:", error);
+        console.error("Failed to fetch Polymarket event from Gamma API:", error);
         const errorMessage = error instanceof Error ? error.message : "Unknown error";
         const isNotFound = errorMessage.includes("404") || errorMessage.toLowerCase().includes("not found");
         return new Response(
@@ -214,7 +243,7 @@ Deno.serve(async (req: Request) => {
             success: false,
             error: isNotFound
               ? `Event '${eventSlug}' not found on Polymarket.`
-              : `Failed to fetch markets: ${errorMessage}`,
+              : `Failed to fetch markets from Polymarket: ${errorMessage}`,
             metadata: {
               requestId: crypto.randomUUID(),
               timestamp: new Date().toISOString(),
@@ -245,6 +274,9 @@ Deno.serve(async (req: Request) => {
     const processingTimeMs = Date.now() - startTime;
     console.log("Request completed in", processingTimeMs, "ms");
 
+    // For Polymarket, we always use Gamma API; for Kalshi, use the requested provider
+    const effectiveDataProvider = pmType === 'Polymarket' ? 'gamma' : dataProvider;
+
     const response: GetEventsResponse = {
       success: true,
       eventIdentifier,
@@ -252,7 +284,7 @@ Deno.serve(async (req: Request) => {
       pmType,
       markets,
       marketsCount: markets.length,
-      dataProvider,
+      dataProvider: effectiveDataProvider,
       metadata: {
         requestId: crypto.randomUUID(),
         timestamp: new Date().toISOString(),

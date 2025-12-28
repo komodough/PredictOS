@@ -357,11 +357,14 @@ const AgenticMarketAnalysis = () => {
           const grokTools = agent.tools?.filter(t => t === 'x_search' || t === 'web_search') as GrokTool[] | undefined;
           const hasPolyfactual = agent.tools?.includes('polyfactual');
 
+          // Limit markets to first 10 to avoid token limits
+          const marketsForAgent = eventsData.markets.slice(0, 10);
+
           const agentResponse = await fetch("/api/event-analysis-agent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              markets: eventsData.markets,
+              markets: marketsForAgent,
               eventIdentifier: eventsData.eventIdentifier,
               pmType: eventsData.pmType,
               model: agent.model,
