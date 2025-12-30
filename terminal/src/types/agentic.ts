@@ -104,8 +104,21 @@ export interface AggregatedAnalysis extends MarketAnalysis {
   agentConsensus: AgentConsensus;
 }
 
+/** PayAI seller result for bookmaker aggregation */
+export interface X402ResultInput {
+  /** Agent identifier that used this seller */
+  agentId: string;
+  /** Name of the PayAI seller */
+  seller: string;
+  /** Query sent to the seller */
+  query: string;
+  /** Response from the seller (truncated) */
+  response: string;
+}
+
 export interface AnalysisAggregatorRequest {
-  analyses: AgentAnalysisInput[];
+  analyses?: AgentAnalysisInput[];
+  x402Results?: X402ResultInput[];
   eventIdentifier: string;
   pmType: PmType;
   model: string;
