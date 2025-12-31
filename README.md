@@ -374,6 +374,19 @@ Your PredictOS terminal will be running at [http://localhost:3000](http://localh
   </tr>
   <tr>
     <td width="120" align="center">
+      <a href="https://www.payai.network/">
+        <img src="terminal/public/payai.jpg" alt="PayAI" width="80" height="80" />
+      </a>
+    </td>
+    <td>
+      <h3><a href="https://www.payai.network/">PayAI (x402)</a></h3>
+      <p><strong>The HTTP 402 payment protocol for AI agents.</strong> PayAI enables seamless machine-to-machine payments using the x402 protocol, allowing AI agents to pay for API calls and services automatically with USDC on Solana or Base.</p>
+      <p>🔗 PredictOS integrates PayAI to power the <strong>x402 Tool</strong> in Super Intelligence — enabling agents to discover and call paid AI services from the PayAI bazaar with automatic payment handling. Browse sellers, select services, and let your agents pay for premium data and analysis.</p>
+      <p><a href="https://www.payai.network/">🌐 Website</a> · <a href="https://docs.payai.network/">📖 Docs</a> · <a href="https://x.com/PayAINetwork">𝕏 Twitter</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="120" align="center">
       <a href="https://irys.xyz/">
         <img src="terminal/public/iris.jpg" alt="IRYS" width="80" height="80" />
       </a>
@@ -422,19 +435,6 @@ Your PredictOS terminal will be running at [http://localhost:3000](http://localh
       <p><strong>Building AI tools for investors, traders, developers, and institutions — DeFAI.</strong> Hey Anon is launching Pandora, a fully permissionless prediction market where users can create their own markets and earn fees.</p>
       <p>🔗 PredictOS is partnering with Hey Anon to integrate Pandora and bring Alpha Terminal insights to permissionless markets — together we're building the future of decentralized prediction markets.</p>
       <p><a href="https://heyanon.ai/">🌐 Website</a> · <a href="https://x.com/HeyAnonai">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://www.payai.network/">
-        <img src="terminal/public/payai.jpg" alt="PayAI" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://www.payai.network/">PayAI (x402)</a></h3>
-      <p><strong>The HTTP 402 payment protocol for AI agents.</strong> PayAI enables seamless machine-to-machine payments using the x402 protocol, allowing AI agents to pay for API calls and services automatically with USDC on Solana or Base.</p>
-      <p>🔗 PredictOS integrates PayAI to power the <strong>x402 Tool</strong> in Super Intelligence — enabling agents to discover and call paid AI services from the PayAI bazaar with automatic payment handling. Browse sellers, select services, and let your agents pay for premium data and analysis.</p>
-      <p><a href="https://www.payai.network/">🌐 Website</a> · <a href="https://docs.payai.network/">📖 Docs</a> · <a href="https://x.com/AskPayAI">𝕏 Twitter</a></p>
     </td>
   </tr>
 </table>
